@@ -10,7 +10,7 @@ public class Main {
 
         Carrito miCarro = new Carrito(carlos, new Producto[]{esponja, jabonEnPolvo, chocolate});
 
-        float precioFinal = Carrito.precios(Carrito.productos);
+        float precioFinal = Carrito.precios(miCarro.productos);
         System.out.println(precioFinal);
 
 
