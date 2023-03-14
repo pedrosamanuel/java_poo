@@ -1,7 +1,7 @@
 public class Producto {
     private String nombre;
     private String codigo;
-    public float precio;
+    private float precio;
 
     public Producto(String nombre, String codigo, float precio){
         this.nombre = nombre;
@@ -10,4 +10,7 @@ public class Producto {
 
     }
 
+    public float getPrecio() {
+        return precio;
+    }
 }
