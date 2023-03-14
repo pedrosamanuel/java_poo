@@ -10,6 +10,9 @@ public class Carrito {
         this.productos = productos;
         this.fechaCompra = LocalDate.now();
     }
+    public Producto[] getProductos() {
+        return productos;
+    }
     public static float precios(Producto[] p){
         float suma = 0;
         for(int i = 0; i < p.length ; i++){
@@ -19,7 +22,5 @@ public class Carrito {
 
     }
 
-    public Producto[] getProductos() {
-        return productos;
-    }
+
 }

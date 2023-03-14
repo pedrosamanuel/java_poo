@@ -9,8 +9,8 @@ public class Producto {
         this.precio = precio;
 
     }
-
     public float getPrecio() {
         return precio;
     }
+
 }
