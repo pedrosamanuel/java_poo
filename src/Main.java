@@ -11,14 +11,26 @@ public class Main {
         Descuento descPorcentajeTope = new DescuentoPorcConTope();
         descPorcentajeTope.setValor(0.3f);
         Descuento descFijo = new DescuentoFijo();
-        descFijo.setValor(50);
+        descFijo.setValor(151);
+        Carrito miCarro = new Carrito(carlos);
+        miCarro.agregarCarrito(esponja);
+        miCarro.agregarCarrito(jabonEnPolvo);
+        miCarro.agregarCarrito(chocolate);
 
-        Carrito miCarro = new Carrito(carlos, new Producto[]{esponja, jabonEnPolvo, chocolate});
 
-        float precioFinal = Carrito.precios(miCarro.getProductos());
-        precioFinal = descPorcentaje.valorFinal(precioFinal, 40);
+        try {
+            float precioFinal = Carrito.precios(miCarro.getProductos());
+            try {
+                precioFinal = descPorcentaje.valorFinal(precioFinal, 40);
+                System.out.println(precioFinal);
+            } catch (DescuentoNeg e) {
+                System.out.println("El resultado del descuento es un monto negativo o 0");
+            }
 
-        System.out.println(precioFinal);
+
+        } catch (PrecioCeroException e) {
+            System.out.println("El carrito tiene precio 0");
+        }
 
 
     }

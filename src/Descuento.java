@@ -9,7 +9,7 @@ public abstract class Descuento {
         this.valor = valor;
     }
 
-    public abstract float valorFinal(float valorInicial, float tope);
+    public abstract float valorFinal(float valorInicial, float tope) throws DescuentoNeg;
 
 
 }
